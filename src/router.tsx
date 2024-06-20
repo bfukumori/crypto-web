@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import { ExtractLayout } from "./routes/extract.layout";
 import { ExtractPage } from "./routes/extract.page";
 import { HomePage } from "./routes/home.page";
+import { NotImplementedPage } from "./routes/not-implemented.page";
 import { PatrimonyPage } from "./routes/patrimony.page";
 import { ProductsPage } from "./routes/products.page";
 import { Root } from "./routes/root";
@@ -24,8 +26,17 @@ export const router = createBrowserRouter([
         element: <PatrimonyPage />,
       },
       {
-        path: RoutesEnum.EXTRACT,
-        element: <ExtractPage />,
+        element: <ExtractLayout />,
+        children: [
+          {
+            path: RoutesEnum.EXTRACT,
+            element: <ExtractPage />,
+          },
+          {
+            path: "*",
+            element: <NotImplementedPage />,
+          },
+        ],
       },
     ],
   },

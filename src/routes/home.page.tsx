@@ -3,14 +3,11 @@ import {
   BanknoteIcon,
   BookTextIcon,
   ChevronRightIcon,
-  EyeIcon,
-  EyeOffIcon,
   HandCoinsIcon,
   SendIcon,
   SendToBackIcon,
 } from "lucide-react";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import bitcoin from "@/assets/bitcoin.svg";
 import ethereum from "@/assets/ethereum.svg";
@@ -18,6 +15,7 @@ import solana from "@/assets/solana.svg";
 import tether from "@/assets/tether.svg";
 import { CryptoCard } from "@/components/CryptoCard";
 import { ShortcutCard } from "@/components/ShortcutCard";
+import { ToggleValuesButton } from "@/components/ToggleValuesButton";
 import { Button } from "@/components/ui/Button";
 import {
   Card,
@@ -28,28 +26,23 @@ import {
   CardTitle,
 } from "@/components/ui/Card";
 import { Separator } from "@/components/ui/Separator";
+import { useToggleVisibility } from "@/hooks/useToggleVisibility";
 import { currencyFormatter } from "@/lib/utils";
 
 import { RoutesEnum } from "./routesEnum";
 
 export function HomePage() {
-  const [visible, setVisible] = useState(false);
-
-  function toggleVisibility() {
-    setVisible((prev) => !prev);
-  }
+  const { toggleVisibility, visible } = useToggleVisibility();
 
   return (
     <div className="m-auto mt-8 max-w-7xl px-4">
       <section>
         <div className="mb-4 flex items-center justify-between">
           <h1 className="text-3xl font-bold">Meu Patrimônio</h1>
-          <Button
-            className="h-10 w-10 rounded-full bg-muted p-0 hover:bg-zinc-600"
-            onClick={toggleVisibility}
-          >
-            {visible ? <EyeOffIcon /> : <EyeIcon />}
-          </Button>
+          <ToggleValuesButton
+            visible={visible}
+            toggleVisibility={toggleVisibility}
+          />
         </div>
         <Card>
           <CardHeader>
@@ -70,13 +63,24 @@ export function HomePage() {
       </section>
       <section className="mt-8">
         <div className="flex flex-wrap gap-2">
-          <ShortcutCard text="Depositar" icon={BanknoteIcon} />
-          <ShortcutCard text="Sacar" icon={HandCoinsIcon} />
-          <ShortcutCard text="Comprar" icon={HandCoinsIcon} />
-          <ShortcutCard text="Receber Cripto" icon={SendToBackIcon} />
-          <ShortcutCard text="Enviar Cripto" icon={SendIcon} />
-          <ShortcutCard text="Extrato" icon={BookTextIcon} />
-          <ShortcutCard text="Ordens" icon={ArrowLeftRightIcon} />
+          <Link to="/deposit" className="flex-1">
+            <ShortcutCard text="Depositar" icon={BanknoteIcon} />
+          </Link>
+          <Link to="" className="flex-1">
+            <ShortcutCard text="Sacar" icon={HandCoinsIcon} />
+          </Link>
+          <Link to="" className="flex-1">
+            <ShortcutCard text="Receber Cripto" icon={SendToBackIcon} />
+          </Link>
+          <Link to="/transfer" className="flex-1">
+            <ShortcutCard text="Transferir" icon={SendIcon} />
+          </Link>
+          <Link to={RoutesEnum.EXTRACT} className="flex-1">
+            <ShortcutCard text="Extrato" icon={BookTextIcon} />
+          </Link>
+          <Link to="" className="flex-1">
+            <ShortcutCard text="Ordens" icon={ArrowLeftRightIcon} />
+          </Link>
         </div>
       </section>
 

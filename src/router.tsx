@@ -4,7 +4,6 @@ import { ExtractLayout } from "./routes/extract.layout";
 import { ExtractPage } from "./routes/extract.page";
 import { HomePage } from "./routes/home.page";
 import { NotImplementedPage } from "./routes/not-implemented.page";
-import { PatrimonyPage } from "./routes/patrimony.page";
 import { ProductsPage } from "./routes/products.page";
 import { Root } from "./routes/root";
 import { RoutesEnum } from "./routes/routesEnum";
@@ -21,10 +20,7 @@ export const router = createBrowserRouter([
         path: RoutesEnum.PRODUCTS,
         element: <ProductsPage />,
       },
-      {
-        path: RoutesEnum.PATRIMONY,
-        element: <PatrimonyPage />,
-      },
+
       {
         element: <ExtractLayout />,
         children: [

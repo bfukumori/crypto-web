@@ -43,7 +43,7 @@ export function ExtractLayout() {
   return (
     <div className="m-auto mt-8 max-w-7xl px-4">
       <div className="grid grid-cols-[300px_minmax(900px,1fr)]">
-        <aside className="flex flex-col gap-6 bg-zinc-900 p-4">
+        <aside className="flex flex-col gap-6 bg-card p-4 shadow-2xl">
           <section>
             <div className="mb-4 flex items-center justify-between">
               <span className="text-lg font-semibold">Selecionar ativo</span>
@@ -55,7 +55,7 @@ export function ExtractLayout() {
             <Select onValueChange={setCrypto} value={crypto}>
               <SelectTrigger className="w-full">
                 <SelectValue>
-                  <div className="flex items-center gap-4 rounded-md bg-zinc-800 p-4">
+                  <div className="flex items-center gap-4 rounded-md bg-secondary p-4">
                     <img
                       src={CRYPTO_IMG[crypto]}
                       alt="Bitcoin"
@@ -72,27 +72,27 @@ export function ExtractLayout() {
                   </div>
                 </SelectValue>
               </SelectTrigger>
-              <SelectContent className="-mt-1 w-[268px] space-y-4 rounded-b-md bg-zinc-950 p-4">
+              <SelectContent className="-mt-1 w-[268px] space-y-4 rounded-b-md bg-input p-4">
                 <SelectItem
-                  className="cursor-pointer rounded-sm p-2 hover:bg-zinc-800"
+                  className="cursor-pointer rounded-sm p-2 hover:bg-primary"
                   value="BTC"
                 >
                   Bitcoin
                 </SelectItem>
                 <SelectItem
-                  className="cursor-pointer rounded-sm p-2 hover:bg-zinc-800"
+                  className="cursor-pointer rounded-sm p-2 hover:bg-primary"
                   value="ETH"
                 >
                   Ethereum
                 </SelectItem>
                 <SelectItem
-                  className="cursor-pointer rounded-sm p-2 hover:bg-zinc-800"
+                  className="cursor-pointer rounded-sm p-2 hover:bg-primary"
                   value="USDT"
                 >
                   Tether
                 </SelectItem>
                 <SelectItem
-                  className="cursor-pointer rounded-sm p-2 hover:bg-zinc-800"
+                  className="cursor-pointer rounded-sm p-2 hover:bg-primary"
                   value="SOL"
                 >
                   Solana
@@ -118,7 +118,7 @@ export function ExtractLayout() {
               </span>
             </div>
           </section>
-          <section className="-mx-4 -mb-4 flex flex-col gap-6 border-t border-t-zinc-600 bg-zinc-800 p-4">
+          <section className="-mx-4 -mb-4 flex flex-col gap-6 border-t border-t-border bg-background p-4">
             <span className="mt-4 text-lg font-semibold">
               Movimentar {crypto}
             </span>

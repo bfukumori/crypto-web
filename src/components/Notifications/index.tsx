@@ -12,12 +12,12 @@ export function Notifications() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button className="mr-5 h-10 w-10 rounded-full bg-muted p-0 hover:bg-zinc-600">
+        <Button variant="secondary" className="mr-5 h-10 w-10 rounded-full p-0">
           <BellIcon />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
-        <div className="rounded bg-zinc-900 p-4">
+        <div className="rounded bg-popover p-4 shadow-lg">
           <h2 className="text-lg font-semibold">Notificações</h2>
           <ul className="mt-4 space-y-2">
             <li className="flex items-center space-x-2">

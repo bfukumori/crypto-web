@@ -20,7 +20,7 @@ export function CryptoCard({
   type,
 }: CryptoCardProps) {
   return (
-    <Card className="cursor-pointer transition-all hover:bg-zinc-900">
+    <Card>
       <CardHeader className="flex flex-row items-center gap-3">
         <img width={24} height={24} src={icon} className="mt-2" />
         <CardTitle>{cryptoName}</CardTitle>

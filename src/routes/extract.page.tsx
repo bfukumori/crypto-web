@@ -41,7 +41,7 @@ export function ExtractPage() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto bg-zinc-900 p-0">
+            <PopoverContent className="w-auto bg-background p-0 shadow-md">
               <Calendar
                 locale={ptBR}
                 mode="single"

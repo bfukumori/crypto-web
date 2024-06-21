@@ -1,3 +1,4 @@
+import { BitcoinIcon } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 import { Notifications } from "@/components/Notifications";
@@ -8,9 +9,10 @@ import { RoutesEnum } from "./routesEnum";
 export function Root() {
   return (
     <div className="flex h-dvh flex-col">
-      <header className="bg-secondary p-5">
+      <header className="bg-secondary p-5 px-10">
         <nav className="flex items-center justify-between">
           <ul className="flex space-x-8">
+            <BitcoinIcon />
             <NavLink
               to={RoutesEnum.HOME}
               className={({ isActive }) => (isActive ? "text-primary" : "")}
@@ -22,12 +24,6 @@ export function Root() {
               className={({ isActive }) => (isActive ? "text-primary" : "")}
             >
               Produtos
-            </NavLink>
-            <NavLink
-              to={RoutesEnum.PATRIMONY}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              Patrimônio
             </NavLink>
             <NavLink
               to={RoutesEnum.EXTRACT}

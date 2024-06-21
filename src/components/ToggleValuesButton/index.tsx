@@ -13,7 +13,8 @@ export function ToggleValuesButton({
 }: ToggleValuesButtonProps) {
   return (
     <Button
-      className="h-10 w-10 rounded-full bg-muted p-0 hover:bg-zinc-600"
+      variant="secondary"
+      className="h-10 w-10 rounded-full p-0"
       onClick={toggleVisibility}
     >
       {visible ? <EyeOffIcon /> : <EyeIcon />}

@@ -7,6 +7,7 @@ import { NotImplementedPage } from "./routes/not-implemented.page";
 import { ProductsPage } from "./routes/products.page";
 import { Root } from "./routes/root";
 import { RoutesEnum } from "./routes/routesEnum";
+import { ExchangePage } from "./routes/exchange.page";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
           {
             path: RoutesEnum.EXTRACT,
             element: <ExtractPage />,
+          },
+          {
+            path: RoutesEnum.EXCHANGE,
+            element: <ExchangePage />,
           },
           {
             path: "*",

@@ -51,7 +51,7 @@ export function HomePage() {
           </CardHeader>
           <CardContent>
             <p className="text-4xl font-semibold">
-              {visible ? currencyFormatter(10000) : "******"}
+              {visible ? currencyFormatter(10000000) : "******"}
             </p>
           </CardContent>
           <CardFooter>

@@ -56,7 +56,7 @@ export function HomePage() {
           </CardContent>
           <CardFooter>
             <Button variant="link" asChild>
-              <NavLink to={RoutesEnum.PATRIMONY}>Ver detalhes</NavLink>
+              <NavLink to="/">Ver detalhes</NavLink>
             </Button>
           </CardFooter>
         </Card>
